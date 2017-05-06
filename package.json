@@ -1,0 +1,18 @@
+{
+  "name": "mvc-passive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "AbstractBlockController.js",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.welovehtml.ru/ivan.metelev/mvc-passive.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

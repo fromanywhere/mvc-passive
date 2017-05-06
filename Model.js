@@ -7,24 +7,19 @@ define(function () {
 
         constructor() {
             this.data = {
-                news: [
-                    {
-                        id: 0,
-                        title: "Заголовок первой новости",
-                        rating: 3
-                    },
-                    {
-                        id: 1,
-                        title: "Заголовок второй новости",
-                        rating: 1
-                    },
-                    {
-                        id: 2,
-                        title: "Заголовок третьей новости",
-                        rating: 2
-                    }
-                ]
-            }
+                news: []
+            };
+
+            let xhr = new XMLHttpRequest();
+            let url = "/model.json";
+
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                    this.data = JSON.parse(xhr.responseText);
+                }
+            };
+            xhr.send();
         }
 
         getNews() {
