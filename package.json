@@ -1,0 +1,19 @@
+{
+  "name": "mvc-passive-bundle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "AbstractBlockController.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.welovehtml.ru/ivan.metelev/mvc-passive.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "dot-loader": "^0.1.1",
+    "webpack": "^2.5.0"
+  }
+}

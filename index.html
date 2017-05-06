@@ -3,46 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <title></title>
-  <script data-main="App" src="require.min.js"></script>
 </head>
 <body>
     <div id="App"></div>
-
-    <script type="text/template" id="MainPage">
-        <h1>{{=it.logo}}</h1>
-        <h2>Главная страница.</h2>
-        <ol>
-        {{~it.newsList :value:index}}
-            <li>
-                <a href='{{!it.getNewsPageLink(value.id)}}'>{{!value.title}}</a>
-            </li>
-        {{~}}
-        </ol>
-        <form method="POST">
-            <h3>Создайте новость:</h3>
-            <label>
-                Заголовок новости:
-                <input type="text" name="new" />
-            </label>
-            <input type="submit" value="Создать" />
-        </form>
-    </script>
-
-    <script type="text/template" id="NewsPage">
-        <h1>{{=it.logo}}</h1>
-        <h2>Страница новости</h2>
-        <h3>{{=it.title}}</h3>
-    </script>
-
-    <script type="text/template" id="ErrorPage">
-        <h1>{{=it.logo}}</h1>
-        <h2>Страница ошибки</h2>
-        <p>{{!it.error}}</p>
-        <p>{{!it.trace}}</p>
-    </script>
-
-    <script type="text/template" id="Logo">
-        <a {{? !it.isMainState}}href="{{!it.logoLink}}"{{?}}>[Логотип]</a>
-    </script>
+    <script src="build/bundle.js" type="text/javascript"></script>
 </body>
 </html>

@@ -1,16 +1,18 @@
 define([
     'AbstractBlockController',
     'State',
-    'View'
+    'View',
+    'dot-loader!./Logo.html'
 ], function (
     /** AbstractBlockController */ AbstractBlockController,
     /** State */ State,
-    /** View */ View
+    /** View */ View,
+    template
 ) {
     class Logo extends AbstractBlockController {
 
-        getView(templateId) {
-            return new View(templateId, {
+        getView() {
+            return new View(template, {
                 isMainState: this.ctx.getStateId() === State.list.MAIN_PAGE,
                 logoLink: State.getLinkOnState(State.list.MAIN_PAGE)
             })

@@ -1,22 +1,25 @@
+/*global define*/
 define([
     'AbstractBlockController',
     'ViewCtx',
     'State',
-    'Logo',
+    'blocks/Logo/Logo',
     'Model',
-    'View'
+    'View',
+    'dot-loader!./MainPage.html'
 ], function (
     /** AbstractBlockController */ AbstractBlockController,
     /** ViewCtx */ ViewCtx,
     /** State */ State,
     /** Logo */ Logo,
     /** Model */ Model,
-    /** View */ View
+    /** View */ View,
+    template
 ) {
     class MainPage extends AbstractBlockController {
 
-        getView(templateId) {
-            return new View(templateId, this.ctx.getTemplateParams());
+        getView() {
+            return new View(template, this.ctx.getTemplateParams());
         }
 
         getViewCtx(ctx) {

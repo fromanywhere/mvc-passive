@@ -1,3 +1,4 @@
+/*global define, require*/
 define([
     'Renderator'
 ], function (
@@ -151,12 +152,13 @@ define([
          */
         renderCurrentState() {
             var state = this.getCurrentState();
+            var that = this;
 
-            require([state.stateId], (Page) => {
+            require(['pages/' + state.stateId + '/' + state.stateId], function (Page) {
                 try {
                     Renderator.render(Page, state);
                 } catch (e) {
-                    this.renderState(this.list.ERROR_PAGE, {
+                    that.renderState(that.list.ERROR_PAGE, {
                         error: "Ошибка рендеринга",
                         trace: e.stack
                     });

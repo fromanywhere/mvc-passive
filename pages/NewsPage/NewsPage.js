@@ -1,15 +1,18 @@
+/*global define*/
 define([
     'AbstractBlockController',
     'State',
-    'Logo',
+    'blocks/Logo/Logo',
     'Model',
-    'View'
+    'View',
+    'dot-loader!./NewsPage.html'
 ], function (
     /** AbstractBlockController */ AbstractBlockController,
     /** State */ State,
     /** Logo */ Logo,
     /** Model */ Model,
-    /** View */ View 
+    /** View */ View,
+    template
 ) {
     class NewsPage extends AbstractBlockController {
 
@@ -26,8 +29,8 @@ define([
             return true;
         }
 
-        getView(templateId) {
-            return new View(templateId, {
+        getView() {
+            return new View(template, {
                 logo: new Logo(this.ctx).render(),
                 title: Model.getNews()[this.ctx.getStateParams().id].title
             });

@@ -1,3 +1,4 @@
+/*global define*/
 define([
     'AbstractController'
 ], function (
@@ -42,7 +43,7 @@ define([
          * Возвращает экземпляр View для блока
          * @return {View}
          */
-        getView(templateId) {
+        getView() {
             throw new Error('Необходимо определить View');
         }
 
@@ -62,7 +63,7 @@ define([
          */
         render() {
             return this.needRender
-                ? this.getView(this.constructor.name).render()
+                ? this.getView().render()
                 : null;
         }
     }

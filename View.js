@@ -1,8 +1,5 @@
-define([
-    'doT.min'
-], function (
-    /** doT */ dot
-) {
+/*global define*/
+define(function () {
 
     /**
      * Реализация View
@@ -12,17 +9,16 @@ define([
 
         /**
          *
-         * @param {String} templateId
+         * @param {Function} template
          * @param {Object} params
          */
-        constructor(templateId, params) {
-            this.templateId = templateId;
+        constructor(template, params) {
             this.params = params;
-            this.template = document.getElementById(this.templateId).innerHTML;
+            this.template = template;
         }
     
         render() {
-            return dot.template(this.template)(this.params);
+            return this.template(this.params);
         }
     }
     

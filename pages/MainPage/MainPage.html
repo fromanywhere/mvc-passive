@@ -1,0 +1,17 @@
+<h1>{{=it.logo}}</h1>
+<h2>Главная страница.</h2>
+<ol>
+    {{~it.newsList :value:index}}
+    <li>
+        <a href='{{!it.getNewsPageLink(value.id)}}'>{{!value.title}}</a>
+    </li>
+    {{~}}
+</ol>
+<form method="POST">
+    <h3>Создайте новость:</h3>
+    <label>
+        Заголовок новости:
+        <input type="text" name="new" />
+    </label>
+    <input type="submit" value="Создать" />
+</form>
